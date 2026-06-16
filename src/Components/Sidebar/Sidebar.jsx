@@ -1,22 +1,54 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Sidebar.css';
 import { ChatContext } from '../../Context/ContextProvider';
+import { FaRegPenToSquare } from "react-icons/fa6";
+import { HiMenu } from "react-icons/hi";
+import { RxCross2 } from "react-icons/rx";
+
 
 
 function Sidebar() {
     const { chats, activeId, createNewChat,
          selectChat, removeChat } = useContext(ChatContext);
 
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+    function toggleSidebar() {
+        if(isSidebarOpen === true) {
+        setIsSidebarOpen(false);
+        } else {
+        setIsSidebarOpen(true);
+        }
+    }
+
   return (
 
-    <div>
-       <aside className="sidebar">
+    <div className='sidebar-container'>
+          
+          <button className="button toggle" onClick={toggleSidebar}>
+            {isSidebarOpen ?  <RxCross2 /> : <HiMenu /> }
+          </button>
+
+       {/* {isSidebarOpen &&    */}
+      {/*  <aside className="sidebar"> */}
+        <aside className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
+
         <div className="sidebar-header">
-          <h3>Chats</h3>
-          <button className="btn" onClick={createNewChat}>New</button>
+
+            <h1 className='amura sidebar-title'><span>✦</span>Amura.ai</h1>
+
+            <button className="button newMsg" onClick={createNewChat}>
+              <FaRegPenToSquare />
+              <span> Chat</span>
+            </button>
+
         </div>
+
+
         <ul className="chat-list">
+
           {chats.length === 0 && <li className="empty">No chats yet. Create one.</li>}
+          
           {chats.map(chat => {
             const last = chat.messages[chat.messages.length - 1];
             return (
@@ -32,7 +64,13 @@ function Sidebar() {
             );
           })}
         </ul>
+
+          {/* <button className="button newMsg" onClick={createNewChat}> <FaRegPenToSquare /> Chat</button> */}
+
+
       </aside>
+        {/* } */}
+
     </div>
 
   )

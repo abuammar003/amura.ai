@@ -30,6 +30,16 @@
 }
 
 
+@media (max-width:720px) {
+  .sidebar-main {
+    width: 0;
+  }
+
+  .chatbox-main {
+    width: 100%;
+  }
+}
+
 
 
 

@@ -16,7 +16,8 @@ function App() {
         <Chatting />
       </ContextProvider>
       
-      <Footer />
+        <Footer />
+
     </div>
   )
 }

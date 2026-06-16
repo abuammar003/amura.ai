@@ -9,7 +9,7 @@ function Chatbox() {
   const activeChat = chats.find(c => c.id === activeId);
 
   return (
-    <div>
+    // <div>
 
          <main className="panel">
         <header className="panel-header">{activeChat ? activeChat.title : 'Select or create a chat'}</header>
@@ -39,7 +39,9 @@ function Chatbox() {
           />
           <button className="btn" onClick={sendMessage} disabled={!activeChat || !input.trim()}>Send</button>
         </div>
-      </main></div>
+      </main>
+      
+      // </div>
   )
 }
 
