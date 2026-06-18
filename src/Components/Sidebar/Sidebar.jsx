@@ -8,18 +8,11 @@ import { RxCross2 } from "react-icons/rx";
 
 
 function Sidebar() {
+
     const { chats, activeId, createNewChat,
-         selectChat, removeChat } = useContext(ChatContext);
+         selectChat, removeChat, toggleSidebar, isSidebarOpen } = useContext(ChatContext);
 
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
-    function toggleSidebar() {
-        if(isSidebarOpen === true) {
-        setIsSidebarOpen(false);
-        } else {
-        setIsSidebarOpen(true);
-        }
-    }
+   
 
   return (
 
@@ -47,18 +40,22 @@ function Sidebar() {
 
         <ul className="chat-list">
 
+          <h5 className='chat-history'>Chat History</h5>
+
           {chats.length === 0 && <li className="empty">No chats yet. Create one.</li>}
+          
           
           {chats.map(chat => {
             const last = chat.messages[chat.messages.length - 1];
             return (
+              
               <li
                 key={chat.id}
                 className={`chat-item ${chat.id === activeId ? 'active' : ''}`}
                 onClick={() => selectChat(chat.id)}
               >
                 <div className="chat-title">{chat.title}</div>
-                <div className="chat-excerpt">{last ? (last.sender === 'me' ? 'You: ' : '') + last.text : <em>Empty</em>}</div>
+                <div className="chat-excerpt">{last ? (last.sender === 'me' ? 'You: ' : '') + last.text.slice(0, 50) : <em>Empty</em>}</div>
                 <button className="remove" onClick={e => { e.stopPropagation(); removeChat(chat.id); }}>×</button>
               </li>
             );

@@ -1,103 +1,6 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 
-.panel {  
-  
-  height: calc(97vh - 100px);
-
-  flex: 1;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border-radius: 8px;
-  padding: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-}
-
-.panel-header {
-  padding: 8px;
-  border-bottom: 1px solid #eee;
-  font-weight: 600;
-}
-
-.messages {
-  flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.placeholder {
-    color: #999;
-    padding: 12px;
-}
-
-.message {
-    max-width: 70%;
-    padding: 8px 10px;
-    border-radius: 8px;
-    position: relative;
-    overflow-wrap: anywhere;
-}
-
-.message.me {
-  align-self: flex-end;
-  background: #e6f0ff;
-}
-
-.message.bot {
-  align-self: flex-start;
-  background: #f1f3f5;
-}
-
-.message-time {
-  font-size: 11px;
-  color: #666;
-  margin-top: 6px;
-  text-align: right;
-}
-
-.composer {
-  display: flex;
-  gap: 8px;
-  padding: 8px;
-  border-top: 1px solid #eee;
-}
-
-.composer input {
-  flex: 1;
-  padding: 8px 10px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-}
-
-.btn {
-  background: #0366d6;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.btn:disabled {
-  opacity: 0.5;
-  cursor: default;
-} */
-
-
-
-
-
-/* AI */
  *{
     margin:0;
     padding:0;
@@ -117,6 +20,10 @@
     border-radius:15px;
 
     overflow:hidden;
+
+    /* scrollbar-width: thin; */
+    scrollbar-width: 2px;
+    scrollbar-color: #ccc transparent;
 }
 
 .panel-header{
@@ -154,6 +61,7 @@
     border-radius: 8px;
     position: relative;
     overflow-wrap: anywhere;
+    font-family: 'Inter', sans-serif;
 }
 
 .message.me {
@@ -164,8 +72,12 @@
 
 .message.bot {
   align-self: flex-start;
-  background: #e1e3e6;
-  font-size: clamp(14px, 1.5vw, 16px);
+  background: #e6e7e9;  
+  color: #111827;
+  font-size: clamp(14px, 1.4vw, 15px);
+  line-height: 1.7;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* font-weight: 400; */
 }
 
 .message-time {
@@ -206,6 +118,11 @@
 
 
 @media (max-width:720px) {
+
+  .panel {
+    height: 89vh;
+  }
+
   .messages {
     padding: 8px;
   }
