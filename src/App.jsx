@@ -20,7 +20,7 @@ function App() {
   return (
     <div className='app'>
 
-      <button className='themeIcon' onClick={handleTheme}> {isDarkTheme ? "Light" : "Dark" } </button>
+      {/* <button className='themeIcon' onClick={handleTheme}> {isDarkTheme ? "Light" : "Dark" } </button> */}
       {/* <h1>ChatBox</h1> */}
       <Header />
 
