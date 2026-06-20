@@ -6,13 +6,15 @@
 
 .footer {
     display: flex;
-    justify-content: space-between; 
-    align-items: center;
+    justify-content: space-between;
+    flex-direction: row; 
+    /* align-items: center; */
     background: #f5f7fa;
     padding: 7px 15px;
     text-align: center;
     border-top: 1px solid #eee;
     margin-top: 0.8rem;
+    /* display: block; */
 }
 
 .footer h3 {
@@ -24,6 +26,17 @@
     font-size: clamp(13px, 1.5vw, 15px);
     color: #666;
 }
+
+
+
+@media (max-width: 720px) {
+    .footer {
+        display: none;
+    }
+}
+
+
+
 
 /* .footer .socials {
     display: flex;
@@ -46,9 +59,8 @@
 
 
 
-@media(max-width: 768px){
+/* @media(max-width: 768px){
     .footer {
-        /* flex-direction: column; */
         padding: 10px 15px;
     }
 
@@ -59,9 +71,9 @@
     .footer .socials {
         margin-top: 10px;
     }
-}
+} */
 
-
+/* 
 @media(max-width: 560px){
     .footer {
         margin-top: 0.3rem;
@@ -83,4 +95,4 @@
     .footer .socials {
         margin-top: 10px;
     }
-}
+} */

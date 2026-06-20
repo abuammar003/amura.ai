@@ -19,7 +19,7 @@ function Chatbox() {
 
           {!activeChat && <div className="placeholder">No chat selected.</div>}
           
-          {activeChat && activeChat.messages.length === 0 && <div className="placeholder">No messages yet.</div>}
+          {activeChat && activeChat.messages.length === 0 && <div className="placeholder">How can i help you today?</div>}
 
           {activeChat && activeChat.messages.map(m => (
             <div key={m.id} className={`message ${m.sender === 'me' ? 'me' : 'bot'}`}>

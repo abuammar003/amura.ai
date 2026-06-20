@@ -10,24 +10,3 @@
   flex-direction: column;
   position: relative;
 }
-
-.themeIcon {
-  position: fixed;
-  right: 1.5rem;
-  top: 5rem;
-}
-
-.dark {
-  background-color: black;
-  color: white;
-}
-
-@media (max-width: 720px) {
-  .app {
-    height: 100vh;
-  }
-  
-  .footer-app {
-    display: none;
-  }
-}

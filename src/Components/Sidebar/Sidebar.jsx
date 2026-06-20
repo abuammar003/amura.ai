@@ -30,7 +30,7 @@ function Sidebar() {
 
             <h1 className='amura sidebar-title'><span>✦</span>Amura.ai</h1>
 
-            <button className="button newMsg" onClick={createNewChat}>
+            <button className="button newChat" onClick={createNewChat}>
               <FaRegPenToSquare />
               <span> Chat</span>
             </button>
