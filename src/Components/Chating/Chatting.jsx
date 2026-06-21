@@ -6,7 +6,7 @@ import Sidebar from '../Sidebar/Sidebar';
 function Chatting() {
 
  
-
+ 
   return (
     <div className="chatting">
 
