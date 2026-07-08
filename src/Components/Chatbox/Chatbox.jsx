@@ -1,8 +1,13 @@
 import React, {useContext} from 'react';
 import { ChatContext } from '../../Context/ContextProvider';
 import './Chatbox.css';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeHighlight from 'rehype-highlight';
+import 'highlight.js/styles/github.css';
 
-function Chatbox() {
+
+function Chatbox() { 
     const { chats, activeId, input, setInput,
          messagesEndRef, sendMessage, closeSidebar } = useContext(ChatContext);
 
@@ -21,14 +26,27 @@ function Chatbox() {
           
           {activeChat && activeChat.messages.length === 0 && <div className="placeholder">How can i help you today?</div>}
 
-          {activeChat && activeChat.messages.map(m => (
+          {activeChat &&
+           activeChat.messages.map(m => (
             <div key={m.id} className={`message ${m.sender === 'me' ? 'me' : 'bot'}`}>
+              {/* <div className="message-text"> */}
 
-              <div className="message-text">{m.text}</div>
+            <div className = 'markdown'>
+
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeHighlight]}
+              >
+                {m.text}
+              </ReactMarkdown>
+            </div>
+
+                {/* </div> */}
               {/* <div className="message-time">{new Date(m.time).toLocaleTimeString()}</div> */}
 
             </div>
-          ))}
+          ))
+          }
           
           <div ref={messagesEndRef} />
         </section>

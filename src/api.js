@@ -2,8 +2,8 @@ import axios from "axios";
 
  const API_KEY = import.meta.env.VITE_GROQ_API_KEY;
 
- console.log(API_KEY);
-
+//  console.log(API_KEY);
+ 
  export async function generateResponse(prompt) {
     try {
         const response = await axios.post(
