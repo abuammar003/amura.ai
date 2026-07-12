@@ -1,7 +1,9 @@
 import React, {useContext} from 'react';
 import { ChatContext } from '../../Context/ContextProvider';
 import './Chatbox.css';
-import ReactMarkdown from 'react-markdown';
+
+// react-markdown: is a React component that converts Markdown text into React elements.
+import ReactMarkdown from 'react-markdown';      
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import 'highlight.js/styles/github.css';

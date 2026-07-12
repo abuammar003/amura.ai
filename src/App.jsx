@@ -12,7 +12,9 @@ function App() {
     <div className='app'>
 
    
-      <Header />
+      <div className="header-app">
+        <Header />
+      </div>
 
       <ContextProvider>
         <Chatting />
