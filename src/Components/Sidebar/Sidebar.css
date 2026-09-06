@@ -41,10 +41,11 @@
 
 .button {
   /* width: 60px; */
-  font-size: clamp(16px, 1.7vw, 18px);
+  font-size: clamp(17px, 1.8vw, 19px);
   align-items: center;
-  padding: 5px 9px 1px 9px;
-  background-color: rgba(0, 0, 0, 0.808);
+  padding: 4px 5px 0px 5px;
+  /* background-color: rgba(0, 0, 0, 0.808); */
+  background-color: black;
   color: white;
   border-radius: 7px;
   cursor: pointer;
@@ -127,7 +128,7 @@
         display:block;
 
         position:fixed;
-        top: 32px;
+        top: 8px;
         left: 10px;
 
         z-index:1100;

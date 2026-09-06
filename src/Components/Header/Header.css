@@ -55,3 +55,9 @@
         font-size: clamp(18px, 4vw, 22px);
     } */
 }
+
+@media(max-width: 720px) {
+    .amura {
+        margin-left: 2rem;
+    }
+}

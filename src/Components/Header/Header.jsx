@@ -7,7 +7,7 @@ import { TbWorldCode } from "react-icons/tb";
 function Header() {
 
   return (
-
+ 
     <div className='header'>
         <h1 className='amura'><span>✦</span>Amura.ai</h1>
 
