@@ -17,7 +17,7 @@ function Chatting() {
       <div className="chatbox-main">
         <Chatbox />
       </div>        
-      
+       
     </div>
   );
 }

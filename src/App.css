@@ -10,7 +10,9 @@
   flex-direction: column;
   position: relative;
 }
-/* 
-.header-app {
-  position: sticky;
-} */
+
+
+.footer-app {
+  position: absolute;
+  bottom: 0;
+}
